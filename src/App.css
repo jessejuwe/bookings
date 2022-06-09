@@ -3,7 +3,17 @@
   background-color: #61dafb;
 }
 
-.App-logo {
+.sect {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem;
+}
+
+hr {
+  margin: 3em;
+  opacity: 0.3;
+}
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -36,4 +46,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

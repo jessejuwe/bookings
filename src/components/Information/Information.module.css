@@ -1,0 +1,21 @@
+.section {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  display: block;
+}
+
+.section h1 {
+  color: black;
+  font-size: x-large;
+}
+
+.section p {
+  color: rgb(168, 164, 164);
+  font-size: small;
+}
+
+.section img {
+  width: 500px;
+  height: 300px;
+}

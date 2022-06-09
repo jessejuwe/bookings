@@ -1,0 +1,30 @@
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 3em;
+}
+
+.actions button {
+  width: 20%;
+  padding: 1em;
+
+  font-size: 1em;
+  font-weight: bold;
+
+  background-color: brown;
+  color: white;
+}
+
+.actions label {
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.actions button:hover,
+.actions button:focus,
+.actions button:active,
+.actions button.active {
+  background-color: #eb4545;
+  outline-color: teal;
+  cursor: pointer;
+}

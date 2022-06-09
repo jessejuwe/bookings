@@ -1,22 +1,29 @@
-import './Header.css';
+import classes from './Header.module.css';
 
-const Header = () => {
+const Header = props => {
   return (
-    <nav className="nav">
-      <div className="section-list">
-        <ul className="list">
+    <header className={classes.header}>
+      <nav className={classes.nav}>
+        <ul>
           <li>
             <a href="/">TRIPS</a>
           </li>
-          <li>RECENTLY VIEWED</li>
-          <li>BOOKINGS</li>
+          <li>
+            <a href="/">RECENTLY VIEWED</a>
+          </li>
+          <li>
+            <a href="/">BOOKINGS</a>
+          </li>
+          <li>
+            <img
+              src={require('../../assets/headshot.avif')}
+              alt="Profile"
+              onClick={props.onShowModal}
+            />
+          </li>
         </ul>
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV0uFMU_Z_bvQqesaQQCo6mqB8-lehIGQeuQ&usqp=CAU"
-          alt="Profile"
-        />
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 
