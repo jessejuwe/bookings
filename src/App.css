@@ -3,10 +3,18 @@
   background-color: #61dafb;
 }
 
+@media only screen and (min-width: 768px) {
+  .sect {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .sect {
-  display: flex;
-  justify-content: space-between;
+  padding: 1em;
   margin: 3rem;
+  width: auto;
+  height: auto;
 }
 
 hr {

@@ -1,11 +1,22 @@
+@media only screen and (min-width: 768px) {
+  .actions {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .actions {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .actions {
-  display: flex;
-  justify-content: space-between;
-  margin: 3em;
+  margin: 4em;
 }
 
 .actions button {
-  width: 20%;
   padding: 1em;
 
   font-size: 1em;

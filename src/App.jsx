@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Fragment, useContext } from 'react';
 
 import Header from './components/layout/Header';
 
@@ -10,30 +10,32 @@ import PaymentForm from './components/PaymentForm/PaymentForm';
 import Summary from './components/Summary/Summary';
 import Payment from './components/Payment/Payment';
 
+import ModalContext from './context/modal-context';
+
 import './App.css';
-import ModalProvider from './context/ModalProvider';
 
 const App = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const ctx = useContext(ModalContext);
 
-  const openModalHandler = () => setModalIsOpen(true);
-  const closeModalHandler = () => setModalIsOpen(false);
+  const openModalHandler = () => ctx.openModal();
+  const closeModalHandler = () => ctx.closeModal();
 
   return (
-    <ModalProvider>
-      {modalIsOpen && <Backdrop show closed={closeModalHandler} />}
+    <Fragment>
+      {ctx.modalIsOpen && <Backdrop show closed={closeModalHandler} />}
       <Header onShowModal={openModalHandler} />
       <hr />
-      <Modal show={modalIsOpen} closed={closeModalHandler} />
+      <Modal show={ctx.modalIsOpen} closed={closeModalHandler} />
       <div className="sect">
         <Information />
+        <br />
         <PaymentForm />
       </div>
       <hr />
       <Summary />
       <hr />
       <Payment />
-    </ModalProvider>
+    </Fragment>
   );
 };
 

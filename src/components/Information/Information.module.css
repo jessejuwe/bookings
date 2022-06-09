@@ -2,7 +2,9 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
-  display: block;
+  width: auto;
+  height: auto;
+  margin: auto;
 }
 
 .section h1 {
@@ -15,7 +17,35 @@
   font-size: small;
 }
 
-.section img {
-  width: 500px;
-  height: 300px;
+@media only screen and (min-width: 768px) {
+  .card {
+    width: 480px;
+    height: 280px;
+  }
+}
+
+.card {
+  padding: 0.5em;
+  border-radius: 1%;
+  background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
+}
+
+.card p {
+  color: white;
+  font-size: small;
+  font-weight: bold;
+
+  margin-left: 1em;
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin-left: 1em;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 2.5em;
 }
