@@ -3,7 +3,7 @@ import React, { useReducer } from 'react';
 import ModalContext from './modal-context';
 
 // Default Modal State
-const defaultModalState = { modalIsOpen: false, ccn: '', expDate: '' };
+const defaultModalState = { modalIsOpen: false };
 
 // Modal Reducer function, logic for validation
 const modalReducer = (state, action) => {
@@ -18,19 +18,14 @@ const modalReducer = (state, action) => {
 
 const ModalProvider = props => {
   // prettier-ignore
-  const [modalState, dispatchModalAction] = useReducer(modalReducer, defaultModalState);
+  const [modalState, dispatch] = useReducer(modalReducer, defaultModalState);
 
-  const openModal = () => dispatchModalAction({ type: 'OPEN_MODAL' });
+  const openModal = () => dispatch({ type: 'OPEN_MODAL' });
 
-  const closeModal = () => dispatchModalAction({ type: 'CLOSE_MODAL' });
+  const closeModal = () => dispatch({ type: 'CLOSE_MODAL' });
 
-  const modalContext = {
-    modalIsOpen: modalState.modalIsOpen,
-    ccn: modalState.ccn,
-    expDate: modalState.expDate,
-    openModal,
-    closeModal,
-  };
+  // prettier-ignore
+  const modalContext = { modalIsOpen: modalState.modalIsOpen, openModal, closeModal };
 
   return (
     <ModalContext.Provider value={modalContext}>

@@ -3,12 +3,12 @@ import { useContext } from 'react';
 import Card from '../UI/Card';
 
 import useInput from '../../hooks/use-input';
-import ModalContext from '../../context/modal-context';
+import CardContext from '../../context/card-context';
 
 import classes from './PaymentForm.module.css';
 
 const PaymentForm = () => {
-  const ctx = useContext(ModalContext);
+  const ctx = useContext(CardContext);
 
   // prettier-ignore
   const ccnValidate = value => value.trim() !== '' && value.trim().length === 16;

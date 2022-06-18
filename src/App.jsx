@@ -1,4 +1,4 @@
-import { Fragment, useContext } from 'react';
+import { useContext } from 'react';
 
 import Header from './components/layout/Header';
 
@@ -11,6 +11,7 @@ import Summary from './components/Summary/Summary';
 import Payment from './components/Payment/Payment';
 
 import ModalContext from './context/modal-context';
+import CardProvider from './context/CardProvider';
 
 import './App.css';
 
@@ -21,7 +22,7 @@ const App = () => {
   const closeModalHandler = () => ctx.closeModal();
 
   return (
-    <Fragment>
+    <CardProvider>
       {ctx.modalIsOpen && <Backdrop show closed={closeModalHandler} />}
       <Header onShowModal={openModalHandler} />
       <hr />
@@ -35,7 +36,7 @@ const App = () => {
       <Summary />
       <hr />
       <Payment />
-    </Fragment>
+    </CardProvider>
   );
 };
 
