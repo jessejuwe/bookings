@@ -3,9 +3,9 @@ import { useContext } from 'react';
 import Card from '../UI/Card';
 
 import useInput from '../../hooks/use-input';
-import CardContext from '../../context/card-context';
 
 import classes from './PaymentForm.module.css';
+import { CardContext } from '../../context/card-context';
 
 const PaymentForm = () => {
   const ctx = useContext(CardContext);
@@ -69,9 +69,9 @@ const PaymentForm = () => {
     // Guard Clause
     if (!formIsValid) return;
 
-    // update state context
-    ctx.ccn = ccnValue;
-    ctx.expDate = expDateValue;
+    // update context API
+    ctx.setCCN(ccnValue);
+    ctx.setEXPDATE(expDateValue);
 
     console.log(ctx);
 

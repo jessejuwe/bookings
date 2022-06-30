@@ -11,9 +11,9 @@ import Summary from './components/Summary/Summary';
 import Payment from './components/Payment/Payment';
 
 import ModalContext from './context/modal-context';
-import CardProvider from './context/CardProvider';
 
 import './App.css';
+import CardContextProvider from './context/card-context';
 
 const App = () => {
   const ctx = useContext(ModalContext);
@@ -22,7 +22,7 @@ const App = () => {
   const closeModalHandler = () => ctx.closeModal();
 
   return (
-    <CardProvider>
+    <CardContextProvider>
       {ctx.modalIsOpen && <Backdrop show closed={closeModalHandler} />}
       <Header onShowModal={openModalHandler} />
       <hr />
@@ -36,7 +36,7 @@ const App = () => {
       <Summary />
       <hr />
       <Payment />
-    </CardProvider>
+    </CardContextProvider>
   );
 };
 

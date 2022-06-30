@@ -7,11 +7,9 @@ const defaultModalState = { modalIsOpen: false };
 
 // Modal Reducer function, logic for validation
 const modalReducer = (state, action) => {
-  if (action.type === 'OPEN_MODAL')
-    return { modalIsOpen: true, ccn: state.ccn, expDate: state.expDate };
+  if (action.type === 'OPEN_MODAL') return { modalIsOpen: true };
 
-  if (action.type === 'CLOSE_MODAL')
-    return { modalIsOpen: false, ccn: state.ccn, expDate: state.expDate };
+  if (action.type === 'CLOSE_MODAL') return { modalIsOpen: false };
 
   return defaultModalState;
 };
